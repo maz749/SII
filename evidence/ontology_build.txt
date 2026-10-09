@@ -1,0 +1,1 @@
+OWL: rpg.owl; unary=50; binary=15; SWRL=7

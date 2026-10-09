@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-07",
+  "format_source": "Системы ИИ.pdf",
+  "prolog_tests": 14,
+  "python_tests": 18,
+  "reasoners": [
+    "HermiT",
+    "Pellet"
+  ],
+  "swrl_rules_compared": 7,
+  "sparql_queries": 6,
+  "negative_ontology_tests": 3,
+  "unary_facts": 50,
+  "binary_facts": 15,
+  "pdf_pages_reviewed": 24,
+  "pdf_visual_review": "Все 24 страницы проверены. Монохромность проверена по PDF-операторам и RGB-каналам отрендеренных страниц; колонтитулы и номера страниц удалены.",
+  "title_fields": "Университет ИТМО; Санкт-Петербург; Бирюков Ян; группа 3321; проверила Королева Ю.А.",
+  "protege_gui": "Не проверен: установка Homebrew заблокирована Gatekeeper. Reasoner запускался программно.",
+  "report_format_updated": "2026-10-09"
+}

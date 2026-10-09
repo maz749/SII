@@ -1,0 +1,206 @@
+{
+  "consistent": true,
+  "unary_facts": 50,
+  "binary_facts": 15,
+  "swrl_rules": 7,
+  "classes": 16,
+  "domain_individuals": 20,
+  "named_entities_including_rules": 27,
+  "rules": {
+    "frontliner": {
+      "class": "Frontliner",
+      "prolog": [
+        "guardian",
+        "paladin",
+        "warrior"
+      ],
+      "owl": [
+        "guardian",
+        "paladin",
+        "warrior"
+      ],
+      "equal": true
+    },
+    "protector": {
+      "class": "Protector",
+      "prolog": [
+        "paladin"
+      ],
+      "owl": [
+        "paladin"
+      ],
+      "equal": true
+    },
+    "ranged_damage": {
+      "class": "RangedDamage",
+      "prolog": [
+        "druid",
+        "mage",
+        "necromancer",
+        "ranger"
+      ],
+      "owl": [
+        "druid",
+        "mage",
+        "necromancer",
+        "ranger"
+      ],
+      "equal": true
+    },
+    "beginner_choice": {
+      "class": "BeginnerChoice",
+      "prolog": [
+        "bard",
+        "cleric",
+        "guardian",
+        "paladin",
+        "ranger",
+        "warrior"
+      ],
+      "owl": [
+        "bard",
+        "cleric",
+        "guardian",
+        "paladin",
+        "ranger",
+        "warrior"
+      ],
+      "equal": true
+    },
+    "armored_hunter": {
+      "class": "ArmoredHunter",
+      "prolog": [
+        "druid",
+        "mage",
+        "necromancer"
+      ],
+      "owl": [
+        "druid",
+        "mage",
+        "necromancer"
+      ],
+      "equal": true
+    },
+    "ranged_support": {
+      "class": "RangedSupport",
+      "prolog": [
+        "bard",
+        "druid"
+      ],
+      "owl": [
+        "bard",
+        "druid"
+      ],
+      "equal": true
+    },
+    "versatile": {
+      "class": "Versatile",
+      "prolog": [
+        "druid",
+        "paladin"
+      ],
+      "owl": [
+        "druid",
+        "paladin"
+      ],
+      "equal": true
+    }
+  },
+  "data_property_values": {
+    "warrior": true,
+    "paladin": true,
+    "guardian": true,
+    "ranger": true,
+    "cleric": true,
+    "bard": true
+  },
+  "hermit": {
+    "frontliner": [
+      "guardian",
+      "paladin",
+      "warrior"
+    ],
+    "protector": [
+      "paladin"
+    ],
+    "ranged_damage": [
+      "druid",
+      "mage",
+      "necromancer",
+      "ranger"
+    ],
+    "beginner_choice": [
+      "bard",
+      "cleric",
+      "guardian",
+      "paladin",
+      "ranger",
+      "warrior"
+    ],
+    "armored_hunter": [
+      "druid",
+      "mage",
+      "necromancer"
+    ],
+    "ranged_support": [
+      "bard",
+      "druid"
+    ],
+    "versatile": [
+      "druid",
+      "paladin"
+    ]
+  },
+  "negative_ontology_tests": {
+    "disjoint_ranges": "inconsistency_detected",
+    "two_distinct_weapons": "inconsistency_detected",
+    "invalid_boolean": "inconsistency_detected"
+  },
+  "sparql": {
+    "characters": [
+      "assassin",
+      "bard",
+      "cleric",
+      "druid",
+      "guardian",
+      "mage",
+      "necromancer",
+      "paladin",
+      "ranger",
+      "warrior"
+    ],
+    "ranged_damage": [
+      "druid",
+      "mage",
+      "necromancer",
+      "ranger"
+    ],
+    "protector": [
+      "paladin"
+    ],
+    "armor": [
+      "druid",
+      "mage",
+      "necromancer"
+    ],
+    "beginner_ranged": [
+      "ranger"
+    ],
+    "beginner_friendly": [
+      "bard",
+      "cleric",
+      "guardian",
+      "paladin",
+      "ranger",
+      "warrior"
+    ]
+  }
+}
+* Owlready2 * Running Pellet...
+    java -Xmx2000M -cp /Users/mayzinho/Desktop/СИИ/.venv/lib/python3.12/site-packages/owlready2/pellet/httpclient-4.2.3.jar:/Users/mayzinho/Desktop/СИИ/.venv/lib/python3.12/site-packages/owlready2/pellet/aterm-java-1.6.jar:/Users/mayzinho/Desktop/СИИ/.venv/lib/python3.12/site-packages/owlready2/pellet/xercesImpl-2.10.0.jar:/Users/mayzinho/Desktop/СИИ/.venv/lib/python3.12/site-packages/owlready2/pellet/slf4j-api-1.6.4.jar:/Users/mayzinho/Desktop/СИИ/.venv/lib/python3.12/site-packages/owlready2/pellet/jena-tdb-0.10.0.jar:/Users/mayzinho/Desktop/СИИ/.venv/lib/python3.12/site-packages/owlready2/pellet/jena-iri-0.9.5.jar:/Users/mayzinho/Desktop/СИИ/.venv/lib/python3.12/site-packages/owlready2/pellet/owlapi-distribution-3.4.3-bin.jar:/Users/mayzinho/Desktop/СИИ/.venv/lib/python3.12/site-packages/owlready2/pellet/jcl-over-slf4j-1.6.4.jar:/Users/mayzinho/Desktop/СИИ/.venv/lib/python3.12/site-packages/owlready2/pellet/slf4j-log4j12-1.6.4.jar:/Users/mayzinho/Desktop/СИИ/.venv/lib/python3.12/site-packages/owlready2/pellet/antlr-runtime-3.2.jar:/Users/mayzinho/Desktop/СИИ/.venv/lib/python3.12/site-packages/owlready2/pellet/log4j-core-2.19.0.jar:/Users/mayzinho/Desktop/СИИ/.venv/lib/python3.12/site-packages/owlready2/pellet/pellet-2.3.1.jar:/Users/mayzinho/Desktop/СИИ/.venv/lib/python3.12/site-packages/owlready2/pellet/jgrapht-jdk1.5.jar:/Users/mayzinho/Desktop/СИИ/.venv/lib/python3.12/site-packages/owlready2/pellet/commons-codec-1.6.jar:/Users/mayzinho/Desktop/СИИ/.venv/lib/python3.12/site-packages/owlready2/pellet/antlr-3.2.jar:/Users/mayzinho/Desktop/СИИ/.venv/lib/python3.12/site-packages/owlready2/pellet/xml-apis-1.4.01.jar:/Users/mayzinho/Desktop/СИИ/.venv/lib/python3.12/site-packages/owlready2/pellet/log4j-1.2-api-2.19.0.jar:/Users/mayzinho/Desktop/СИИ/.venv/lib/python3.12/site-packages/owlready2/pellet/httpcore-4.2.2.jar:/Users/mayzinho/Desktop/СИИ/.venv/lib/python3.12/site-packages/owlready2/pellet/jena-arq-2.10.0.jar:/Users/mayzinho/Desktop/СИИ/.venv/lib/python3.12/site-packages/owlready2/pellet/log4j-api-2.19.0.jar:/Users/mayzinho/Desktop/СИИ/.venv/lib/python3.12/site-packages/owlready2/pellet/jena-core-2.10.0.jar pellet.Pellet realize --loader Jena --input-format N-Triples --infer-prop-values --ignore-imports /var/folders/n6/x_1t3c_95dv0_nb1fytwv0n40000gn/T/tmpju34rqgo
+* Owlready2 * Pellet took 0.6029939651489258 seconds
+* Owlready * (NB: only changes on entities loaded in Python are shown, other changes are done but not listed)
+* Owlready2 * Running HermiT...
+    java -Xmx2000M -cp /Users/mayzinho/Desktop/СИИ/.venv/lib/python3.12/site-packages/owlready2/hermit:/Users/mayzinho/Desktop/СИИ/.venv/lib/python3.12/site-packages/owlready2/hermit/HermiT.jar org.semanticweb.HermiT.cli.CommandLine -c -O -D -I file:////var/folders/n6/x_1t3c_95dv0_nb1fytwv0n40000gn/T/tmp3f06qhyb -Y
+* Owlready2 * HermiT took 0.3083229064941406 seconds
+* Owlready * (NB: only changes on entities loaded in Python are shown, other changes are done but not listed)

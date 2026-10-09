@@ -1,0 +1,29 @@
+# Каждый запрос запускается отдельно. Префикс нужен перед каждым запросом.
+# Выполнять над rpg_inferred.owl, если нужны результаты правил SWRL.
+PREFIX rpg: <https://example.org/rpg-labs#>
+# Q1. Все персонажи.
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT DISTINCT ?x WHERE { ?x a/rdfs:subClassOf* rpg:Character . } ORDER BY ?x
+
+# Q2. Атакующие персонажи дальнего боя.
+PREFIX rpg: <https://example.org/rpg-labs#>
+SELECT ?x WHERE { ?x a rpg:RangedDamage . } ORDER BY ?x
+
+# Q3. Защитники с поддержкой: цепочка R1 -> R2.
+PREFIX rpg: <https://example.org/rpg-labs#>
+SELECT ?x WHERE { ?x a rpg:Protector . } ORDER BY ?x
+
+# Q4. Атакующие персонажи с оружием против брони.
+PREFIX rpg: <https://example.org/rpg-labs#>
+SELECT ?x ?w WHERE {
+  ?x a rpg:Damage ; rpg:hasWeapon ?w .
+  ?w rpg:counters rpg:armored .
+} ORDER BY ?x
+
+# Q5. Персонажи для новичка с дальней атакой.
+PREFIX rpg: <https://example.org/rpg-labs#>
+SELECT ?x WHERE { ?x a rpg:RangedDamage, rpg:BeginnerChoice . } ORDER BY ?x
+
+# Q6. Типизированный признак пригодности новичку.
+PREFIX rpg: <https://example.org/rpg-labs#>
+SELECT ?x WHERE { ?x rpg:beginnerFriendly true . } ORDER BY ?x

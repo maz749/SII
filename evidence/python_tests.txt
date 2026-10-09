@@ -1,0 +1,23 @@
+test_armor (test_app.AppTests.test_armor) ... ok
+test_beginner_damage (test_app.AppTests.test_beginner_damage) ... ok
+test_dialog_retry_and_delayed_output (test_app.AppTests.test_dialog_retry_and_delayed_output) ... ok
+test_exit (test_app.AppTests.test_exit) ... ok
+test_fixed_full_confirmation (test_app.AppTests.test_fixed_full_confirmation) ... ok
+test_fixed_invalid_profiles (test_app.AppTests.test_fixed_invalid_profiles) ... ok
+test_fixed_one_clarification (test_app.AppTests.test_fixed_one_clarification) ... ok
+test_fixed_profile (test_app.AppTests.test_fixed_profile) ... ok
+test_fixed_retry_end_to_end (test_app.AppTests.test_fixed_retry_end_to_end) ... ok
+test_fixed_two_clarifications (test_app.AppTests.test_fixed_two_clarifications) ... ok
+test_full_match (test_app.AppTests.test_full_match) ... ok
+test_injection (test_app.AppTests.test_injection) ... ok
+test_invalid_other_fields (test_app.AppTests.test_invalid_other_fields) ... ok
+test_missing_runtime (test_app.AppTests.test_missing_runtime) ... ok
+test_no_match (test_app.AppTests.test_no_match) ... ok
+test_normalization (test_app.AppTests.test_normalization) ... ok
+test_support (test_app.AppTests.test_support) ... ok
+test_undead (test_app.AppTests.test_undead) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.139s
+
+OK

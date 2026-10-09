@@ -1,0 +1,7 @@
+charset-normalizer==3.5.2
+owlready2==0.48
+pillow==12.3.0
+pyparsing==3.3.3
+pypdf==6.19.0
+rdflib==7.6.0
+reportlab==5.0.1

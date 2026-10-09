@@ -1,0 +1,30 @@
+Q1 character(X) - все персонажи
+[assassin,bard,cleric,druid,guardian,mage,necromancer,paladin,ranger,warrior]
+
+Q2 has_weapon(X, staff) - поиск по связи
+[druid,mage,necromancer]
+
+Q3 tank(X), support(X) - И
+[paladin]
+
+Q4 (tank(X); support(X)) - ИЛИ, без повторов
+[bard,cleric,druid,guardian,paladin,warrior]
+
+Q5 character(X), \+ beginner(X) - НЕ после связывания X
+[assassin,druid,mage,necromancer]
+
+Q6 protector(X) - цепочка из двух правил
+[paladin]
+
+Q7 armored_hunter(X) - правило со связями
+[druid,mage,necromancer]
+
+Q8 ranged_damage(X), beginner_choice(X) - два правила
+[ranger]
+
+Q9 ranged_support(X), has_weapon(X, W) - два результата
+[bard-bow,druid-staff]
+
+Q10 tank(X), ranged(X) - нет подходящих объектов
+[]
+

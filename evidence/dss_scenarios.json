@@ -1,0 +1,105 @@
+[
+  {
+    "name": "beginner",
+    "profile": "роль=урон; дистанция=дальняя",
+    "experience": "новичок",
+    "enemy": "любой",
+    "query": "character(X),damage(X),ranged(X),beginner_choice(X),has_weapon(X,W)",
+    "rows": [
+      {
+        "id": "ranger",
+        "tags": [
+          "ranged_damage",
+          "beginner_choice"
+        ],
+        "weapon": "bow"
+      }
+    ]
+  },
+  {
+    "name": "support",
+    "profile": "роль=поддержка; дистанция=дальняя",
+    "experience": "опытный",
+    "enemy": "любой",
+    "query": "character(X),support(X),ranged(X),has_weapon(X,W)",
+    "rows": [
+      {
+        "id": "bard",
+        "tags": [
+          "beginner_choice",
+          "ranged_support"
+        ],
+        "weapon": "bow"
+      },
+      {
+        "id": "druid",
+        "tags": [
+          "ranged_damage",
+          "armored_hunter",
+          "ranged_support",
+          "versatile"
+        ],
+        "weapon": "staff"
+      }
+    ]
+  },
+  {
+    "name": "armor",
+    "profile": "роль=урон; дистанция=дальняя",
+    "experience": "опытный",
+    "enemy": "бронированный",
+    "query": "character(X),damage(X),ranged(X),has_weapon(X,W),counters(W,armored)",
+    "rows": [
+      {
+        "id": "necromancer",
+        "tags": [
+          "ranged_damage",
+          "armored_hunter"
+        ],
+        "weapon": "staff"
+      },
+      {
+        "id": "druid",
+        "tags": [
+          "ranged_damage",
+          "armored_hunter",
+          "ranged_support",
+          "versatile"
+        ],
+        "weapon": "staff"
+      },
+      {
+        "id": "mage",
+        "tags": [
+          "ranged_damage",
+          "armored_hunter"
+        ],
+        "weapon": "staff"
+      }
+    ]
+  },
+  {
+    "name": "undead",
+    "profile": "роль=поддержка; дистанция=любая",
+    "experience": "новичок",
+    "enemy": "нежить",
+    "query": "character(X),support(X),beginner_choice(X),has_weapon(X,W),counters(W,undead)",
+    "rows": [
+      {
+        "id": "cleric",
+        "tags": [
+          "beginner_choice"
+        ],
+        "weapon": "mace"
+      }
+    ]
+  },
+  {
+    "name": "empty",
+    "profile": "роль=защита; дистанция=дальняя",
+    "experience": "новичок",
+    "enemy": "любой",
+    "query": "character(X),tank(X),ranged(X),beginner_choice(X),has_weapon(X,W)",
+    "rows": []
+  }
+]

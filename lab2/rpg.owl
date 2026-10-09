@@ -1,0 +1,548 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="https://example.org/rpg-labs"
+         xmlns="https://example.org/rpg-labs#"
+         xmlns:swrl="http://www.w3.org/2003/11/swrl#">
+
+<owl:Ontology rdf:about="https://example.org/rpg-labs"/>
+
+<owl:ObjectProperty rdf:about="#hasWeapon">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Character"/>
+  <rdfs:range rdf:resource="#Weapon"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#counters">
+  <rdfs:domain rdf:resource="#Weapon"/>
+  <rdfs:range rdf:resource="#Enemy"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#beginnerFriendly">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Character"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#Character">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasWeapon"/>
+      <owl:onClass rdf:resource="#Weapon"/>
+      <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Weapon">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#counters"/>
+      <owl:onClass rdf:resource="#Enemy"/>
+      <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Enemy">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Melee">
+  <rdfs:subClassOf rdf:resource="#Character"/>
+  <owl:disjointWith rdf:resource="#Ranged"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Ranged">
+  <rdfs:subClassOf rdf:resource="#Character"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Damage">
+  <rdfs:subClassOf rdf:resource="#Character"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Tank">
+  <rdfs:subClassOf rdf:resource="#Character"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Support">
+  <rdfs:subClassOf rdf:resource="#Character"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Beginner">
+  <rdfs:subClassOf rdf:resource="#Character"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Frontliner">
+  <rdfs:subClassOf rdf:resource="#Character"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Protector">
+  <rdfs:subClassOf rdf:resource="#Character"/>
+</owl:Class>
+
+<owl:Class rdf:about="#RangedDamage">
+  <rdfs:subClassOf rdf:resource="#Character"/>
+</owl:Class>
+
+<owl:Class rdf:about="#BeginnerChoice">
+  <rdfs:subClassOf rdf:resource="#Character"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ArmoredHunter">
+  <rdfs:subClassOf rdf:resource="#Character"/>
+</owl:Class>
+
+<owl:Class rdf:about="#RangedSupport">
+  <rdfs:subClassOf rdf:resource="#Character"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Versatile">
+  <rdfs:subClassOf rdf:resource="#Character"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#warrior">
+  <rdf:type rdf:resource="#Character"/>
+  <rdf:type rdf:resource="#Melee"/>
+  <rdf:type rdf:resource="#Damage"/>
+  <rdf:type rdf:resource="#Tank"/>
+  <rdf:type rdf:resource="#Beginner"/>
+  <hasWeapon rdf:resource="#sword"/>
+  <beginnerFriendly rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</beginnerFriendly>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#paladin">
+  <rdf:type rdf:resource="#Character"/>
+  <rdf:type rdf:resource="#Melee"/>
+  <rdf:type rdf:resource="#Damage"/>
+  <rdf:type rdf:resource="#Tank"/>
+  <rdf:type rdf:resource="#Support"/>
+  <rdf:type rdf:resource="#Beginner"/>
+  <hasWeapon rdf:resource="#sword"/>
+  <beginnerFriendly rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</beginnerFriendly>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#guardian">
+  <rdf:type rdf:resource="#Character"/>
+  <rdf:type rdf:resource="#Melee"/>
+  <rdf:type rdf:resource="#Tank"/>
+  <rdf:type rdf:resource="#Beginner"/>
+  <hasWeapon rdf:resource="#mace"/>
+  <beginnerFriendly rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</beginnerFriendly>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ranger">
+  <rdf:type rdf:resource="#Character"/>
+  <rdf:type rdf:resource="#Ranged"/>
+  <rdf:type rdf:resource="#Damage"/>
+  <rdf:type rdf:resource="#Beginner"/>
+  <hasWeapon rdf:resource="#bow"/>
+  <beginnerFriendly rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</beginnerFriendly>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#assassin">
+  <rdf:type rdf:resource="#Character"/>
+  <rdf:type rdf:resource="#Melee"/>
+  <rdf:type rdf:resource="#Damage"/>
+  <hasWeapon rdf:resource="#dagger"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#mage">
+  <rdf:type rdf:resource="#Character"/>
+  <rdf:type rdf:resource="#Ranged"/>
+  <rdf:type rdf:resource="#Damage"/>
+  <hasWeapon rdf:resource="#staff"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#cleric">
+  <rdf:type rdf:resource="#Character"/>
+  <rdf:type rdf:resource="#Melee"/>
+  <rdf:type rdf:resource="#Support"/>
+  <rdf:type rdf:resource="#Beginner"/>
+  <hasWeapon rdf:resource="#mace"/>
+  <beginnerFriendly rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</beginnerFriendly>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#druid">
+  <rdf:type rdf:resource="#Character"/>
+  <rdf:type rdf:resource="#Ranged"/>
+  <rdf:type rdf:resource="#Damage"/>
+  <rdf:type rdf:resource="#Support"/>
+  <hasWeapon rdf:resource="#staff"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#bard">
+  <rdf:type rdf:resource="#Character"/>
+  <rdf:type rdf:resource="#Ranged"/>
+  <rdf:type rdf:resource="#Support"/>
+  <rdf:type rdf:resource="#Beginner"/>
+  <hasWeapon rdf:resource="#bow"/>
+  <beginnerFriendly rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</beginnerFriendly>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#necromancer">
+  <rdf:type rdf:resource="#Character"/>
+  <rdf:type rdf:resource="#Ranged"/>
+  <rdf:type rdf:resource="#Damage"/>
+  <hasWeapon rdf:resource="#staff"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sword">
+  <rdf:type rdf:resource="#Weapon"/>
+  <counters rdf:resource="#beast"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#bow">
+  <rdf:type rdf:resource="#Weapon"/>
+  <counters rdf:resource="#flying"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#staff">
+  <rdf:type rdf:resource="#Weapon"/>
+  <counters rdf:resource="#armored"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#dagger">
+  <rdf:type rdf:resource="#Weapon"/>
+  <counters rdf:resource="#caster"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#mace">
+  <rdf:type rdf:resource="#Weapon"/>
+  <counters rdf:resource="#undead"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#beast">
+  <rdf:type rdf:resource="#Enemy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#flying">
+  <rdf:type rdf:resource="#Enemy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#armored">
+  <rdf:type rdf:resource="#Enemy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#caster">
+  <rdf:type rdf:resource="#Enemy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#undead">
+  <rdf:type rdf:resource="#Enemy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#R1_frontliner">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Melee"/>
+          <swrl:argument1 rdf:resource="urn:swrl#x"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:ClassAtom>
+              <swrl:classPredicate rdf:resource="#Tank"/>
+              <swrl:argument1 rdf:resource="urn:swrl#x"/>
+            </swrl:ClassAtom>
+          </rdf:first>
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Frontliner"/>
+          <swrl:argument1 rdf:resource="urn:swrl#x"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Эквивалент правила Prolog frontliner/1.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#R2_protector">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Frontliner"/>
+          <swrl:argument1 rdf:resource="urn:swrl#x"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:ClassAtom>
+              <swrl:classPredicate rdf:resource="#Support"/>
+              <swrl:argument1 rdf:resource="urn:swrl#x"/>
+            </swrl:ClassAtom>
+          </rdf:first>
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Protector"/>
+          <swrl:argument1 rdf:resource="urn:swrl#x"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Эквивалент правила Prolog protector/1.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#R3_ranged_damage">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Ranged"/>
+          <swrl:argument1 rdf:resource="urn:swrl#x"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:ClassAtom>
+              <swrl:classPredicate rdf:resource="#Damage"/>
+              <swrl:argument1 rdf:resource="urn:swrl#x"/>
+            </swrl:ClassAtom>
+          </rdf:first>
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#RangedDamage"/>
+          <swrl:argument1 rdf:resource="urn:swrl#x"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Эквивалент правила Prolog ranged_damage/1.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#R4_beginner_choice">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Character"/>
+          <swrl:argument1 rdf:resource="urn:swrl#x"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:ClassAtom>
+              <swrl:classPredicate rdf:resource="#Beginner"/>
+              <swrl:argument1 rdf:resource="urn:swrl#x"/>
+            </swrl:ClassAtom>
+          </rdf:first>
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#BeginnerChoice"/>
+          <swrl:argument1 rdf:resource="urn:swrl#x"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Эквивалент правила Prolog beginner_choice/1.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#R5_armored_hunter">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Damage"/>
+          <swrl:argument1 rdf:resource="urn:swrl#x"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#hasWeapon"/>
+              <swrl:argument1 rdf:resource="urn:swrl#x"/>
+              <swrl:argument2 rdf:resource="urn:swrl#w"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="#counters"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#w"/>
+                  <swrl:argument2 rdf:resource="#armored"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#ArmoredHunter"/>
+          <swrl:argument1 rdf:resource="urn:swrl#x"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Эквивалент правила Prolog armored_hunter/1.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#R6_ranged_support">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Ranged"/>
+          <swrl:argument1 rdf:resource="urn:swrl#x"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:ClassAtom>
+              <swrl:classPredicate rdf:resource="#Support"/>
+              <swrl:argument1 rdf:resource="urn:swrl#x"/>
+            </swrl:ClassAtom>
+          </rdf:first>
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#RangedSupport"/>
+          <swrl:argument1 rdf:resource="urn:swrl#x"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Эквивалент правила Prolog ranged_support/1.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#R7_versatile">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Damage"/>
+          <swrl:argument1 rdf:resource="urn:swrl#x"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:ClassAtom>
+              <swrl:classPredicate rdf:resource="#Support"/>
+              <swrl:argument1 rdf:resource="urn:swrl#x"/>
+            </swrl:ClassAtom>
+          </rdf:first>
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Versatile"/>
+          <swrl:argument1 rdf:resource="urn:swrl#x"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Эквивалент правила Prolog versatile/1.</rdfs:comment>
+</owl:NamedIndividual>
+
+<swrl:Variable rdf:about="urn:swrl#x"/>
+
+<swrl:Variable rdf:about="urn:swrl#w"/>
+
+<owl:AllDifferent>
+  <owl:distinctMembers rdf:parseType="Collection">
+    <rdf:Description rdf:about="#warrior"/>
+    <rdf:Description rdf:about="#paladin"/>
+    <rdf:Description rdf:about="#guardian"/>
+    <rdf:Description rdf:about="#ranger"/>
+    <rdf:Description rdf:about="#assassin"/>
+    <rdf:Description rdf:about="#mage"/>
+    <rdf:Description rdf:about="#cleric"/>
+    <rdf:Description rdf:about="#druid"/>
+    <rdf:Description rdf:about="#bard"/>
+    <rdf:Description rdf:about="#necromancer"/>
+    <rdf:Description rdf:about="#sword"/>
+    <rdf:Description rdf:about="#bow"/>
+    <rdf:Description rdf:about="#staff"/>
+    <rdf:Description rdf:about="#dagger"/>
+    <rdf:Description rdf:about="#mace"/>
+    <rdf:Description rdf:about="#beast"/>
+    <rdf:Description rdf:about="#flying"/>
+    <rdf:Description rdf:about="#armored"/>
+    <rdf:Description rdf:about="#caster"/>
+    <rdf:Description rdf:about="#undead"/>
+  </owl:distinctMembers>
+</owl:AllDifferent>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Character"/>
+    <rdf:Description rdf:about="#Weapon"/>
+    <rdf:Description rdf:about="#Enemy"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+
+</rdf:RDF>

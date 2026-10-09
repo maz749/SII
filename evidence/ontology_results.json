@@ -1,0 +1,198 @@
+{
+  "consistent": true,
+  "unary_facts": 50,
+  "binary_facts": 15,
+  "swrl_rules": 7,
+  "classes": 16,
+  "domain_individuals": 20,
+  "named_entities_including_rules": 27,
+  "rules": {
+    "frontliner": {
+      "class": "Frontliner",
+      "prolog": [
+        "guardian",
+        "paladin",
+        "warrior"
+      ],
+      "owl": [
+        "guardian",
+        "paladin",
+        "warrior"
+      ],
+      "equal": true
+    },
+    "protector": {
+      "class": "Protector",
+      "prolog": [
+        "paladin"
+      ],
+      "owl": [
+        "paladin"
+      ],
+      "equal": true
+    },
+    "ranged_damage": {
+      "class": "RangedDamage",
+      "prolog": [
+        "druid",
+        "mage",
+        "necromancer",
+        "ranger"
+      ],
+      "owl": [
+        "druid",
+        "mage",
+        "necromancer",
+        "ranger"
+      ],
+      "equal": true
+    },
+    "beginner_choice": {
+      "class": "BeginnerChoice",
+      "prolog": [
+        "bard",
+        "cleric",
+        "guardian",
+        "paladin",
+        "ranger",
+        "warrior"
+      ],
+      "owl": [
+        "bard",
+        "cleric",
+        "guardian",
+        "paladin",
+        "ranger",
+        "warrior"
+      ],
+      "equal": true
+    },
+    "armored_hunter": {
+      "class": "ArmoredHunter",
+      "prolog": [
+        "druid",
+        "mage",
+        "necromancer"
+      ],
+      "owl": [
+        "druid",
+        "mage",
+        "necromancer"
+      ],
+      "equal": true
+    },
+    "ranged_support": {
+      "class": "RangedSupport",
+      "prolog": [
+        "bard",
+        "druid"
+      ],
+      "owl": [
+        "bard",
+        "druid"
+      ],
+      "equal": true
+    },
+    "versatile": {
+      "class": "Versatile",
+      "prolog": [
+        "druid",
+        "paladin"
+      ],
+      "owl": [
+        "druid",
+        "paladin"
+      ],
+      "equal": true
+    }
+  },
+  "data_property_values": {
+    "warrior": true,
+    "paladin": true,
+    "guardian": true,
+    "ranger": true,
+    "cleric": true,
+    "bard": true
+  },
+  "hermit": {
+    "frontliner": [
+      "guardian",
+      "paladin",
+      "warrior"
+    ],
+    "protector": [
+      "paladin"
+    ],
+    "ranged_damage": [
+      "druid",
+      "mage",
+      "necromancer",
+      "ranger"
+    ],
+    "beginner_choice": [
+      "bard",
+      "cleric",
+      "guardian",
+      "paladin",
+      "ranger",
+      "warrior"
+    ],
+    "armored_hunter": [
+      "druid",
+      "mage",
+      "necromancer"
+    ],
+    "ranged_support": [
+      "bard",
+      "druid"
+    ],
+    "versatile": [
+      "druid",
+      "paladin"
+    ]
+  },
+  "negative_ontology_tests": {
+    "disjoint_ranges": "inconsistency_detected",
+    "two_distinct_weapons": "inconsistency_detected",
+    "invalid_boolean": "inconsistency_detected"
+  },
+  "sparql": {
+    "characters": [
+      "assassin",
+      "bard",
+      "cleric",
+      "druid",
+      "guardian",
+      "mage",
+      "necromancer",
+      "paladin",
+      "ranger",
+      "warrior"
+    ],
+    "ranged_damage": [
+      "druid",
+      "mage",
+      "necromancer",
+      "ranger"
+    ],
+    "protector": [
+      "paladin"
+    ],
+    "armor": [
+      "druid",
+      "mage",
+      "necromancer"
+    ],
+    "beginner_ranged": [
+      "ranger"
+    ],
+    "beginner_friendly": [
+      "bard",
+      "cleric",
+      "guardian",
+      "paladin",
+      "ranger",
+      "warrior"
+    ]
+  }
+}
